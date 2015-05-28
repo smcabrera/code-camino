@@ -1,0 +1,13 @@
+= form_for @path do |f|
+  - if @path.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@path.errors.count, "error")} prohibited this path from being saved:"
+      %ul
+        - @path.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+
+  .actions
+    = f.submit 'Save'

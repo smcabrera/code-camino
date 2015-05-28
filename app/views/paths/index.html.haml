@@ -1,0 +1,25 @@
+- provide(:title, "Learning Paths")
+
+%h1 Listing paths
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+
+  %tbody
+    - @paths.each do |path|
+      %tr
+        %td= path.name
+        %td= link_to 'Show', path
+        - if current_user == path.user
+          %td= link_to 'Edit', edit_path_path(path)
+        - if current_user == path.user
+          %td= link_to 'Destroy', path, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+%br
+
+= link_to 'New Path', new_path_path

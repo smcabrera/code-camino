@@ -10,8 +10,5 @@ class User < ActiveRecord::Base
   # Note that for this to make sense we also have to set all users as collaborators on their own wikis otherwise we won't be able to call User.wikis and get all the wikis they're collaborators on.
   # TODO: This is a little confusing and it could be worth writing a blog post explaining this
 
-  after_initialize :init
-
-  def init
-  end
+  has_many :paths
 end

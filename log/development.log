@@ -49264,3 +49264,675 @@ Completed 200 OK in 898ms (Views: 860.6ms | ActiveRecord: 0.0ms)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Marian Hackett"], ["email", "ocie@trompboyer.com"], ["encrypted_password", "$2a$10$i4gNp3CmQIT6NvD23NqXcul78eICf971z1RY1UVAZQSoHKWBCiLWy"], ["confirmed_at", "2015-05-27 20:32:35.475024"], ["created_at", "2015-05-27 20:32:35.476784"], ["updated_at", "2015-05-27 20:32:35.476784"]]
   [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150410215116')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150405050902')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150406230409')[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150410215116')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150405050902')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150406230409')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'stephen.m.cabrera@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Stephen"], ["email", "stephen.m.cabrera@gmail.com"], ["encrypted_password", "$2a$10$dsmH.rWEy70o.o0MTVo/VOZn1dDhi3u7Rh70ud/BPDYrVEqA0n/aW"], ["confirmed_at", "2015-05-27 21:56:53.381432"], ["created_at", "2015-05-27 21:56:53.404955"], ["updated_at", "2015-05-27 21:56:53.404955"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brenda_waters@ernserkuvalis.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Rusty Schneider DDS"], ["email", "brenda_waters@ernserkuvalis.net"], ["encrypted_password", "$2a$10$.lqPbevaWNG97qN8oCo0QeV5qzBdVgzepC/BefddL.VEJwdf8nZSi"], ["confirmed_at", "2015-05-27 21:56:53.799705"], ["created_at", "2015-05-27 21:56:53.801588"], ["updated_at", "2015-05-27 21:56:53.801588"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'deja_walsh@boyle.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Mrs. Jack Skiles"], ["email", "deja_walsh@boyle.com"], ["encrypted_password", "$2a$10$FQD/u7PntwFbJEJDqmoFHucMFe/kuhAV9ZAVDYhiebCpi/5x25eKa"], ["confirmed_at", "2015-05-27 21:56:53.894410"], ["created_at", "2015-05-27 21:56:53.896916"], ["updated_at", "2015-05-27 21:56:53.896916"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kaelyn@collins.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Ralph Medhurst PhD"], ["email", "kaelyn@collins.org"], ["encrypted_password", "$2a$10$sIK0/Xr5x6JfR7bgA6b4B.uwU4Lnfv5jNJhatC7eoPXA1m5kkT7UW"], ["confirmed_at", "2015-05-27 21:56:53.997081"], ["created_at", "2015-05-27 21:56:53.998823"], ["updated_at", "2015-05-27 21:56:53.998823"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'herta.hahn@williamsonlind.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Delilah Trantow"], ["email", "herta.hahn@williamsonlind.net"], ["encrypted_password", "$2a$10$pilGaDAjmq048XFyqQV3geW96WSP0A24rgIU0N3zeG7aBSriiOo8W"], ["confirmed_at", "2015-05-27 21:56:54.079345"], ["created_at", "2015-05-27 21:56:54.081117"], ["updated_at", "2015-05-27 21:56:54.081117"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tatyana.yundt@corkery.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Alysha Kreiger V"], ["email", "tatyana.yundt@corkery.name"], ["encrypted_password", "$2a$10$t4GjNMlusAemDXUcvlpbh./COC40Cy1LqS2FoYrwSwtTkq/iEwJFS"], ["confirmed_at", "2015-05-27 21:56:54.167028"], ["created_at", "2015-05-27 21:56:54.168833"], ["updated_at", "2015-05-27 21:56:54.168833"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/pages/home" for ::1 at 2015-05-27 18:18:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/c6213158986b5f8c/variables" for ::1 at 2015-05-27 18:18:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePaths (20150527220950)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "paths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (8.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150527220950"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "paths" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Path name"], ["created_at", "2015-05-28 14:24:17.279185"], ["updated_at", "2015-05-28 14:24:17.279185"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (7.9ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePaths (20150527220950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "paths"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150527220950"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) [0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150410215116')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150405050902')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150406230409')[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150410215116')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150405050902')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150406230409')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150410215116')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150405050902')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150406230409')[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150410215116')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150405050902')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150406230409')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePaths (20150527220950)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "paths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_paths_on_user_id" ON "paths" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150527220950"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_paths_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_paths_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'stephen.m.cabrera@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Stephen"], ["email", "stephen.m.cabrera@gmail.com"], ["encrypted_password", "$2a$10$uK6Ktm2g.U5zFdJOILPLPOfZrRzpwAn1cEtOdXjZ9hhCiTQV6fCre"], ["confirmed_at", "2015-05-28 14:41:14.059392"], ["created_at", "2015-05-28 14:41:14.091098"], ["updated_at", "2015-05-28 14:41:14.091098"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fae@farrell.org' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Miss Charlotte Dibbert"], ["email", "fae@farrell.org"], ["encrypted_password", "$2a$10$wopkCulA58QOMFVBccSVoO6etGofIeHZZRJK6eU5V29W1BscYa/7m"], ["confirmed_at", "2015-05-28 14:41:14.490582"], ["created_at", "2015-05-28 14:41:14.493134"], ["updated_at", "2015-05-28 14:41:14.493134"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nyah@runolfsdottir.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Miss Abdullah Kiehn"], ["email", "nyah@runolfsdottir.com"], ["encrypted_password", "$2a$10$VV0oHR6Qcj30xjClk.bFpOvOypHdOQpPZPKU/ERNsijDZ5GDDs462"], ["confirmed_at", "2015-05-28 14:41:14.577968"], ["created_at", "2015-05-28 14:41:14.579895"], ["updated_at", "2015-05-28 14:41:14.579895"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alvina@witting.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Ms. Everett Dicki"], ["email", "alvina@witting.name"], ["encrypted_password", "$2a$10$hDggY2b/5DW6TxQyKFQ24ef6PTAwpiRizqLjAFXuNI6cQ0L5qiRka"], ["confirmed_at", "2015-05-28 14:41:14.670304"], ["created_at", "2015-05-28 14:41:14.673410"], ["updated_at", "2015-05-28 14:41:14.673410"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'turner@hyattgreenholt.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Juliana Wiegand"], ["email", "turner@hyattgreenholt.biz"], ["encrypted_password", "$2a$10$37P8NKOJiTL3zMojaPFLy.j0iiQsUtwv06gGIE3icUewURg9e/Y7C"], ["confirmed_at", "2015-05-28 14:41:14.761131"], ["created_at", "2015-05-28 14:41:14.763083"], ["updated_at", "2015-05-28 14:41:14.763083"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kelly.price@leuschke.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Mose McClure IV"], ["email", "kelly.price@leuschke.info"], ["encrypted_password", "$2a$10$nnfj91xtc60faRJYN9Y4Ze/R0sx5zeTB7Vybc5z3kDGd8bsPSncCW"], ["confirmed_at", "2015-05-28 14:41:14.845577"], ["created_at", "2015-05-28 14:41:14.847479"], ["updated_at", "2015-05-28 14:41:14.847479"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPath Load (0.2ms)[0m  SELECT "paths".* FROM "paths" WHERE "paths"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "paths" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Path name"], ["user_id", 1], ["created_at", "2015-05-28 14:43:33.304468"], ["updated_at", "2015-05-28 14:43:33.304468"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/pages/home" for ::1 at 2015-05-28 11:19:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+  Rendered application/_nav.html.erb (31.7ms)
+  Rendered application/_notices.html.haml (3.2ms)
+  Rendered application/_footer.html.haml (2.1ms)
+Completed 200 OK in 6308ms (Views: 6291.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/paths" for ::1 at 2015-05-28 11:19:27 -0400
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"paths"}
+Completed 404 Not Found in 8ms
+
+ActionController::RoutingError - No such page: paths:
+  high_voltage (2.3.0) app/controllers/concerns/high_voltage/static_page.rb:46:in `invalid_page'
+  high_voltage (2.3.0) app/controllers/concerns/high_voltage/static_page.rb:9:in `block (2 levels) in <module:StaticPage>'
+  activesupport (4.2.0) lib/active_support/rescuable.rb:114:in `block in handler_for_rescue'
+  activesupport (4.2.0) lib/active_support/rescuable.rb:80:in `rescue_with_handler'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:15:in `rescue_with_handler'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:32:in `rescue in process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/stephen/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/af3e5b43d6ac4810/variables" for ::1 at 2015-05-28 11:19:27 -0400
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:19:32 -0400
+Processing by PathsController#index as HTML
+  [1m[35mPath Load (0.4ms)[0m  SELECT "paths".* FROM "paths"
+  Rendered paths/index.html.haml within layouts/application (11.4ms)
+  Rendered application/_nav.html.erb (3.2ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 209ms (Views: 189.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/paths/new" for ::1 at 2015-05-28 11:19:36 -0400
+Processing by PathsController#new as HTML
+  Rendered paths/_form.html.haml (9.1ms)
+  Rendered paths/new.html.haml within layouts/application (14.4ms)
+  Rendered application/_nav.html.erb (3.9ms)
+  Rendered application/_notices.html.haml (1.9ms)
+  Rendered application/_footer.html.haml (1.7ms)
+Completed 200 OK in 192ms (Views: 191.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:20:19 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (0.3ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (7.2ms)
+  Rendered application/_nav.html.erb (2.5ms)
+  Rendered application/_notices.html.haml (0.3ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 185ms (Views: 183.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/paths/1" for ::1 at 2015-05-28 11:20:28 -0400
+Processing by PathsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPath Load (0.4ms)[0m  SELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered paths/show.html.haml within layouts/application (1.3ms)
+  Rendered application/_nav.html.erb (2.1ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 329ms (Views: 199.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:22:01 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (0.3ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (1.6ms)
+  Rendered application/_nav.html.erb (3.7ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 233ms (Views: 232.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/paths/1" for ::1 at 2015-05-28 11:22:04 -0400
+Processing by PathsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPath Load (0.2ms)[0m  SELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered paths/show.html.haml within layouts/application (1.6ms)
+  Rendered application/_nav.html.erb (2.4ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 200ms (Views: 198.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:22:14 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (0.2ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (1.7ms)
+  Rendered application/_nav.html.erb (1.8ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 154ms (Views: 152.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:23:05 -0400
+Processing by PathsController#index as HTML
+  [1m[35mPath Load (0.2ms)[0m  SELECT "paths".* FROM "paths"
+  Rendered paths/index.html.haml within layouts/application (5.2ms)
+  Rendered application/_nav.html.erb (3.7ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 170ms (Views: 168.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:23:23 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (0.5ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (8.3ms)
+  Rendered application/_nav.html.erb (4.4ms)
+  Rendered application/_notices.html.haml (0.3ms)
+  Rendered application/_footer.html.haml (0.4ms)
+Completed 200 OK in 227ms (Views: 222.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:23:46 -0400
+Processing by PathsController#index as HTML
+  [1m[35mPath Load (0.2ms)[0m  SELECT "paths".* FROM "paths"
+  Rendered paths/index.html.haml within layouts/application (4.1ms)
+  Rendered application/_nav.html.erb (2.9ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 202ms (Views: 200.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 11:34:43 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (1.1ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (29.6ms)
+  Rendered application/_nav.html.erb (5.4ms)
+  Rendered application/_notices.html.haml (0.5ms)
+  Rendered application/_footer.html.haml (0.8ms)
+Completed 200 OK in 519ms (Views: 503.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/paths/1/edit" for ::1 at 2015-05-28 12:27:31 -0400
+Processing by PathsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPath Load (0.2ms)[0m  SELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered paths/_form.html.haml (403.4ms)
+  Rendered paths/edit.html.haml within layouts/application (412.2ms)
+  Rendered application/_nav.html.erb (18.9ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 701ms (Views: 683.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-28 15:08:22 -0400
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (10.5ms)
+  Rendered application/_nav.html.erb (10.4ms)
+  Rendered application/_notices.html.haml (0.5ms)
+  Rendered application/_footer.html.haml (0.4ms)
+Completed 200 OK in 539ms (Views: 532.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-28 15:08:23 -0400
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered application/_nav.html.erb (1.8ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 251ms (Views: 250.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 15:08:34 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (0.4ms)[0m  [1mSELECT "paths".* FROM "paths"[0m
+  Rendered paths/index.html.haml within layouts/application (8.3ms)
+  Rendered application/_nav.html.erb (2.7ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 217ms (Views: 215.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/paths/new" for ::1 at 2015-05-28 15:16:32 -0400
+Processing by PathsController#new as HTML
+  Rendered paths/_form.html.haml (12.1ms)
+  Rendered paths/new.html.haml within layouts/application (19.7ms)
+  Rendered application/_nav.html.erb (7.1ms)
+  Rendered application/_notices.html.haml (0.4ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 444ms (Views: 431.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/paths" for ::1 at 2015-05-28 15:16:35 -0400
+Processing by PathsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E4M1eRih2N07lyO1koq761SnBFV+Fu6Vny/0ytTvGzDn+nwnzqKHVFg/A4D25yupAm0P1OTYpUKCO2cewJfWQA==", "path"=>{"name"=>"Foo!"}, "commit"=>"Save"}
+  [1m[35m (3.5ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "paths" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Foo!"], ["created_at", "2015-05-28 19:16:35.879896"], ["updated_at", "2015-05-28 19:16:35.879896"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/paths/2
+Completed 302 Found in 30ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/paths/2" for ::1 at 2015-05-28 15:16:35 -0400
+Processing by PathsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPath Load (0.1ms)[0m  [1mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered paths/show.html.haml within layouts/application (7.0ms)
+  Rendered application/_nav.html.erb (2.2ms)
+  Rendered application/_notices.html.haml (9.6ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 246ms (Views: 244.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 15:16:45 -0400
+Processing by PathsController#index as HTML
+  [1m[35mPath Load (0.2ms)[0m  SELECT "paths".* FROM "paths"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered paths/index.html.haml within layouts/application (50.5ms)
+  Rendered application/_nav.html.erb (3.4ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 234ms (Views: 231.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/paths/new" for ::1 at 2015-05-28 15:16:49 -0400
+Processing by PathsController#new as HTML
+  Rendered paths/_form.html.haml (1.3ms)
+  Rendered paths/new.html.haml within layouts/application (4.0ms)
+  Rendered application/_nav.html.erb (1.7ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 202ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/paths" for ::1 at 2015-05-28 15:16:53 -0400
+Processing by PathsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ej7kJKqMNZlZ2UOHwBnLxNSfz0JNDXgRkf0V4bQ3HpKOR616fI9qEDpxY7KkdFuGglXEw9fDM8aM6YY1oE/T4g==", "path"=>{"name"=>"Bar"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "paths" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bar"], ["created_at", "2015-05-28 19:16:53.681780"], ["updated_at", "2015-05-28 19:16:53.681780"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/paths/3
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/paths/3" for ::1 at 2015-05-28 15:16:53 -0400
+Processing by PathsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPath Load (0.1ms)[0m  [1mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered paths/show.html.haml within layouts/application (0.5ms)
+  Rendered application/_nav.html.erb (2.0ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 189ms (Views: 188.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/paths" for ::1 at 2015-05-28 15:16:56 -0400
+Processing by PathsController#index as HTML
+  [1m[35mPath Load (0.2ms)[0m  SELECT "paths".* FROM "paths"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered paths/index.html.haml within layouts/application (4.4ms)
+  Rendered application/_nav.html.erb (4.0ms)
+  Rendered application/_notices.html.haml (0.1ms)
+  Rendered application/_footer.html.haml (0.1ms)
+Completed 200 OK in 193ms (Views: 192.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-28 15:17:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (23.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (51.9ms)
+  Rendered application/_nav.html.erb (3.9ms)
+  Rendered application/_notices.html.haml (0.2ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 280ms (Views: 277.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-28 15:17:22 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6Odv8GwpTg9cvf+3Ogtj346Wky8lzV31mZsis5oaBzr2tThF7P6sV7a18u4hb3NKPBRzSZZfqDLcv9e2hClbA==", "user"=>{"email"=>"stephen.m.cabrera@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "stephen.m.cabrera@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-05-28 19:17:23.114130"], ["current_sign_in_at", "2015-05-28 19:17:23.114130"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-05-28 19:17:23.116244"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-28 15:17:23 -0400
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered application/_nav.html.erb (4.7ms)
+  Rendered application/_notices.html.haml (0.4ms)
+  Rendered application/_footer.html.haml (0.2ms)
+Completed 200 OK in 186ms (Views: 185.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (2.6ms)[0m  SELECT COUNT(*) FROM "paths" WHERE "paths"."user_id" = ?  [["user_id", 1]]
