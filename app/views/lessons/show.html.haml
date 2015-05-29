@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @lesson.name
+%p
+  %b Url:
+  = @lesson.url
+%p
+  %b User:
+  = @lesson.user
+%p
+  %b Path:
+  = @lesson.path
+
+= link_to 'Edit', edit_path_lesson_path(@path, @lesson)
+\|
+= link_to 'Back', path_path(@path)

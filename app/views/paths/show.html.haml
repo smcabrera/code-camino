@@ -2,6 +2,24 @@
 
 = @path.name
 
+%table.table
+  %thead
+    %tr
+      %th Lesson
+      %th
+      %th
+
+  %tbody
+    - @path.lessons.each do |lesson|
+      %tr
+        %td= lesson.name
+        %td= lesson.url
+        - if lesson.path.user == current_user
+          %td= link_to 'Edit', edit_path_lesson_path(@path, lesson)
+          %td= link_to "Delete", path_lesson_path(@path, lesson), method: :delete, data: {confirm: "Are you sure you want to delete this lesson?"}
+
+= link_to "Add Lesson", new_path_lesson_path(@path)
+
 = link_to 'Edit', edit_path_path(@path)
 \|
 = link_to 'Back', paths_path

@@ -1,0 +1,7 @@
+%h1 Editing lesson
+
+= render partial: 'form', locals: { path: @path, lesson: @lesson }
+
+= link_to 'Show', [@path, @lesson]
+\|
+= link_to 'Back', path_path(@path)

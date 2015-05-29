@@ -1,4 +1,4 @@
 class Path < ActiveRecord::Base
   belongs_to :user
-  has_many :tutorials
+  has_many :lessons
 end
