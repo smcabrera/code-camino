@@ -12,8 +12,7 @@
   %tbody
     - @paths.each do |path|
       %tr
-        %td= path.name
-        %td= link_to 'Show', path
+        %td= link_to "#{path.name}", path
         - if current_user == path.user
           %td= link_to 'Edit', edit_path_path(path)
         - if current_user == path.user

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 
 gem 'autoprefixer-rails'
+gem 'best_in_place', '3.0.3'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise', '3.5.1'
@@ -41,3 +42,4 @@ group :development do
   gem 'spring-commands-rspec', '~> 1.0.0', group: :test
   gem 'sqlite3'
 end
+

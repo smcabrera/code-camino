@@ -47,7 +47,12 @@ class LessonsController < ApplicationController
     respond_to do |format|
       if @lesson.update(lesson_params)
         format.html { redirect_to [@path, @lesson], notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lesson }
+        format.js
+        format.json {
+          #Hey, you can put a callback in here!
+        }
+        #format.json { render , status: :ok, location: @lesson }
+        #format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }

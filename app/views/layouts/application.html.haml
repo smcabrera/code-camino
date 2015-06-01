@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    -#= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = favicon_link_tag
+    %title= full_title yield(:title)
+  %body
+    .container
+      = render partial: 'nav'
+      = render partial: 'notices'
+      = yield
+      %br/
+      %br/
+      = render partial: 'footer'
+    / /container
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
