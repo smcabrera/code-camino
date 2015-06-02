@@ -12,17 +12,25 @@
       %th Lesson name
       %th Url
       %th
+      %th
+      %th
 
   %tbody
     - @path.lessons.each do |lesson|
-      %tr
-        %td 
+      %tr{:id => "lesson-#{lesson.id}"}
+        %td
           = best_in_place [@path, lesson], :name
         %td
           = link_to "#{lesson.url}", "#{lesson.url}"
+        %td
+          = lesson.path.user.name
         - if lesson.path.user == current_user
           %td= link_to 'Edit', edit_path_lesson_path(@path, lesson)
-          %td= link_to "Delete", path_lesson_path(@path, lesson), method: :delete, data: {confirm: "Are you sure you want to delete this lesson?"}
+          -#%td= link_to "Delete", [ @path, lesson ], method: :delete, data: {confirm: "Are you sure you want to delete this lesson?"}
+          -#%td= link_to "Show", path_lesson_path(@path, lesson)
+          -#%td= link_to "Delete", path_lesson_path(@path, lesson), method: :delete, remote: true
+          %td= link_to "", [@path, lesson], method: :delete, remote: true, class: "glyphicon glyphicon-remove"
+          -#%td= link_to "Delete", [comment.post.topic, comment.post, comment], method: :delete, remote: true
 
 = link_to "Add Lesson", new_path_lesson_path(@path)
 %br

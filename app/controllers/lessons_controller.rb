@@ -63,9 +63,12 @@ class LessonsController < ApplicationController
   # DELETE /lessons/1
   # DELETE /lessons/1.json
   def destroy
-    @lesson.destroy
+    unless @lesson.destroy
+      flash[:error] =  "could not be removed"
+    end
+
     respond_to do |format|
-      format.html { redirect_to path_path(@path), notice: 'Lesson was successfully destroyed.' }
+      format.js
       format.json { head :no_content }
     end
   end

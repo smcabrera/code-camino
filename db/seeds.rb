@@ -20,8 +20,21 @@ me.save
   user.save
 end
 
+10.times do
+  user = User.all.sample
+  user.paths.create(:name => Faker::Lorem.words.join(" "))
+end
+
+25.times do
+  path = Path.all.sample
+  path.lessons.create(
+    :name => Faker::Lorem.words.join(" "),
+    :url => Faker::Internet.url
+  )
+end
+
 puts "Seed finished"
 puts "#{User.all.count} users created"
-
-
+puts "#{Path.all.count} paths created"
+puts "#{Lesson.all.count} lessons created"
 

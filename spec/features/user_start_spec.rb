@@ -16,11 +16,11 @@ describe 'User' do
       login_as(@user, :scope => :user)
     end
 
-    fit 'is redirected to their dashboard' do
+    it 'is redirected to their dashboard' do
       visit root_path
 
       expect(page).to_not have_content("Sign up")
-      expect(page).to have_content("Listing paths")
+      expect(page).to have_content("All paths")
     end
   end
 end

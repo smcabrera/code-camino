@@ -18,4 +18,12 @@ module ApplicationHelper
   def company_name
     "Stephen Mariano Cabrera"
   end
+
+  def error_message
+    %Q{
+      <div class='alert alert-danger'>
+        #{flash}
+      </div>
+    }
+  end
 end

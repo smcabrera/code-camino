@@ -39,7 +39,7 @@ describe "User" do
       expect(@alice.paths.first.lessons.count).to eq(1)
     end
 
-    it "should be able to delete lessons for paths she created" do
+    fit "should be able to delete lessons for paths she created" do
       path = create(:path, :user => @alice)
       lesson = create(:lesson, :user => @alice, :path => path)
 

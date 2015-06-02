@@ -1,0 +1,5 @@
+<% if @lesson.destroyed? %>
+  $("#lesson-<%= @lesson.id %>").hide();
+<% else %>
+    $('#lesson-' +<%= @lesson.id %>).prepend(<%= error_message %>)
+<% end %>
