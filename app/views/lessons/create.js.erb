@@ -1,0 +1,4 @@
+<%#$('.table > tbody > tr').eq(i-1).after(html);%>
+
+$('.table tr:last').before('<tr><td><%= @lesson.name %></td><td><%= @lesson.url %></td>');
+

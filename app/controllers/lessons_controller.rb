@@ -30,14 +30,13 @@ class LessonsController < ApplicationController
     @lesson = @path.lessons.build(lesson_params)
     @lesson.user = current_user
 
+    unless @lesson.save
+      flash[:error] = "Oops! There was a problem saving the lesson. Please try again."
+    end
+
     respond_to do |format|
-      if @lesson.save
-        format.html { redirect_to [@path, @lesson], notice: 'Lesson was successfully created.' }
-        format.json { render :show, status: :created, location: @lesson }
-      else
-        format.html { render :new }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-      end
+      format.html
+      format.js
     end
   end
 

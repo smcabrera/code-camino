@@ -1,16 +1,15 @@
-= form_for [path, lesson] do |f|
-  - if @lesson.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"
-      %ul
-        - @lesson.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :url
-    = f.text_field :url
-  .actions
-    = f.submit 'Save'
+= form_for [path, lesson], remote: true do |f|
+  -#Not sure where I'd put these!
+  -#- if lesson.errors.any?
+    -##error_explanation
+      -#%h2= "#{pluralize(lesson.errors.count, "error")} prohibited this lesson from being saved:"
+      -#%ul
+        -#- lesson.errors.full_messages.each do |msg|
+          -#%li= msg
+  %tr
+    %td.field
+      = f.text_field :name
+    %td.field
+      = f.text_field :url
+    %td.actions
+      = f.submit 'Add Lesson', class: 'btn btn-sm success'
